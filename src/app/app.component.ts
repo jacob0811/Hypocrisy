@@ -62,7 +62,7 @@ export class AppComponent {
       if (this.flashlight) {
         this.flashlight.nativeElement.style.opacity = '1';
       }
-    }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
+    }, 500); // Adjust delay in milliseconds (1000ms = 1 second)
   }
 
   onmousemove(event: MouseEvent) {
