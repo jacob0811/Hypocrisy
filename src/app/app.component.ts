@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @Component({
   selector: 'app-root',
@@ -31,9 +30,22 @@ export class AppComponent {
   textHeight: number = 30; // Height of the text (adjust based on actual text size)
   clipX: number = 0;
   clipY: number = 0;
-  isTextVisible: boolean = false; // Added the missing property
+  isTextVisible: boolean = true; // Added the missing property
   isTextVisible2: boolean = false; // Added the missing property
   isTextVisible3: boolean = false; // Added the missing property
+
+  timeoutId: any; // Variable to hold the timeout reference
+
+  ngOnInit() {
+    // Optional: Set initial state in ngOnInit if needed
+  }
+
+  ngAfterViewInit() {
+    // Trigger the effect after the view is initialized
+    this.timeoutId = setTimeout(() => {
+      this.isTextVisible = false;
+    }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
+  }
 
   onmousemove(event: MouseEvent) {
     this.mouseX = event.clientX;

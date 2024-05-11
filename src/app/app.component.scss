@@ -19,7 +19,6 @@
     font-size: 150px; /* Adjust font size */
     opacity: 0; /* Initially fully transparent */
     transition: opacity 0.2s ease-in-out; /* Smooth opacity transition */
-    
   }
 
   .container {
@@ -36,5 +35,11 @@
   
   .text:hover {
     opacity: 1; /* Reveal text on hover */
+  }
+  
+  @media only screen and (max-width: 768px) {
+    .text {
+      font-size: 60px; /* Adjust font size for mobile */
+    }
   }
   
