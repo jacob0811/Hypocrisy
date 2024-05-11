@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild  } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { trigger, transition, style, animate } from '@angular/animations';
 
@@ -30,21 +30,27 @@ export class AppComponent {
   textHeight: number = 30; // Height of the text (adjust based on actual text size)
   clipX: number = 0;
   clipY: number = 0;
-  isTextVisible: boolean = true; // Added the missing property
+  isTextVisible: boolean = false; // Added the missing property
   isTextVisible2: boolean = false; // Added the missing property
   isTextVisible3: boolean = false; // Added the missing property
+  initialShowTimeout: any; // Reference to the timeout function
 
-  timeoutId: any; // Variable to hold the timeout reference
+  @ViewChild('initialText', { static: true }) initialText: any; // Reference to the element
 
   ngOnInit() {
-    // Optional: Set initial state in ngOnInit if needed
+    // Set opacity to 0 initially (may flicker)
+    if (this.initialText) {
+      this.initialText.nativeElement.style.opacity = '1';
+    }
   }
 
   ngAfterViewInit() {
-    // Trigger the effect after the view is initialized
-    this.timeoutId = setTimeout(() => {
-      this.isTextVisible = false;
-    }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
+    // Schedule opacity reset after the view is fully initialized (avoids flicker)
+    this.initialShowTimeout = setTimeout(() => {
+      if (this.initialText) {
+        this.initialText.nativeElement.style.opacity = '0'; // Reset opacity
+      }
+    }, 600); // Adjust delay in milliseconds (1000ms = 1 second)
   }
 
   onmousemove(event: MouseEvent) {
