@@ -48,7 +48,7 @@ export class AppComponent {
     // Schedule opacity reset after the view is fully initialized (avoids flicker)
     this.initialShowTimeout = setTimeout(() => {
       if (this.initialText) {
-        this.initialText.nativeElement.style.opacity = '0'; // Reset opacity
+        this.initialText.nativeElement.style.cssText = ''; // Reset opacity
       }
     }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
   }
