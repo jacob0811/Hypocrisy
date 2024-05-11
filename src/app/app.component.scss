@@ -16,10 +16,10 @@
   
   .text {
     color: white;
-    font-size: 100px; /* Adjust font size */
+    font-size: 150px; /* Adjust font size */
     opacity: 0; /* Initially fully transparent */
     transition: opacity 0.2s ease-in-out; /* Smooth opacity transition */
-    font-family: 'Sacramento'; /* Fallback font */
+    
   }
 
   .container {
