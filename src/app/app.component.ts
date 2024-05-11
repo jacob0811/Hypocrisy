@@ -50,7 +50,7 @@ export class AppComponent {
       if (this.initialText) {
         this.initialText.nativeElement.style.opacity = '0'; // Reset opacity
       }
-    }, 600); // Adjust delay in milliseconds (1000ms = 1 second)
+    }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
   }
 
   onmousemove(event: MouseEvent) {
