@@ -1,0 +1,40 @@
+.room {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+  }
+  
+  .light {
+    position: absolute;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.5) 0%, transparent 70%);
+    /* Adjust gradient parameters for desired light intensity and falloff */
+    border-radius: 50%;
+    width: 200px; /* Adjust width and height for desired light size */
+    height: 200px; /* Adjust width and height for desired light size */
+  }
+  
+  .text {
+    color: white;
+    font-size: 100px; /* Adjust font size */
+    opacity: 0; /* Initially fully transparent */
+    transition: opacity 0.2s ease-in-out; /* Smooth opacity transition */
+    
+  }
+
+  .container {
+    position: absolute; /* Adjust positioning if needed */
+    top: 0; /* Set to top of viewport */
+    left: 0; /* Set to left of viewport */
+    width: 100%; /* Take full width */
+    height: 100vh; /* Take full viewport height */
+    display: flex; /* Enable flexbox */
+    flex-direction: column; /* Stack elements vertically */
+    justify-content: space-around;
+    align-items: center; /* Center content horizontally (optional) */
+  }
+  
+  .text:hover {
+    opacity: 1; /* Reveal text on hover */
+  }
+  
