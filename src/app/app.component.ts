@@ -36,11 +36,17 @@ export class AppComponent {
   initialShowTimeout: any; // Reference to the timeout function
 
   @ViewChild('initialText', { static: true }) initialText: any; // Reference to the element
+  @ViewChild('flashlight', { static: true }) flashlight: any; // Reference to the element
 
   ngOnInit() {
     // Set opacity to 0 initially (may flicker)
     if (this.initialText) {
       this.initialText.nativeElement.style.opacity = '1';
+    }
+
+    // Set opacity to 0 initially (may flicker)
+    if (this.flashlight) {
+      this.flashlight.nativeElement.style.opacity = '0';
     }
   }
 
@@ -49,6 +55,12 @@ export class AppComponent {
     this.initialShowTimeout = setTimeout(() => {
       if (this.initialText) {
         this.initialText.nativeElement.style.cssText = ''; // Reset opacity
+      }
+    }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
+
+    this.initialShowTimeout = setTimeout(() => {
+      if (this.flashlight) {
+        this.flashlight.nativeElement.style.cssText = ''; // Reset opacity
       }
     }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
   }

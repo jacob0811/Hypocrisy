@@ -1,5 +1,5 @@
 <div class="room" (mousemove)="onmousemove($event)">
-    <div class="light" [style.left.px]="mouseX - lightRadius/2" [style.top.px]="mouseY - lightRadius/2" [style.width.px]="lightRadius" [style.height.px]="lightRadius"></div>
+    <div class="light" #flashlight [style.left.px]="mouseX - lightRadius/2" [style.top.px]="mouseY - lightRadius/2" [style.width.px]="lightRadius" [style.height.px]="lightRadius"></div>
     <div class="container" >
         <div class="text" [@textOpacity]="isTextVisible" >18.05.2024</div>
         <div class="text" [@textOpacity]="isTextVisible2" #initialText>HYPOCRISY</div>
