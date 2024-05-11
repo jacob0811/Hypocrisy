@@ -60,7 +60,7 @@ export class AppComponent {
 
     this.initialShowTimeout = setTimeout(() => {
       if (this.flashlight) {
-        this.flashlight.nativeElement.style.cssText = ''; // Reset opacity
+        this.flashlight.nativeElement.style.opacity = '1';
       }
     }, 1000); // Adjust delay in milliseconds (1000ms = 1 second)
   }
